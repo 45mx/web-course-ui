@@ -1,0 +1,47 @@
+{
+  "name": "web-course-ui",
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@9.11.0",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky",
+    "lint": "eslint \"./packages/**/{src,test}/**/*.{vue,ts,tsx,js,mjs,cjs}\"",
+    "lint:fix": "eslint \"./packages/**/{src,test}/**/*.{vue,ts,tsx,js,mjs,cjs}\" --fix",
+    "test": "pnpm --dir ./packages/ui test",
+    "test:coverage": "pnpm --dir ./packages/ui test:coverage",
+    "dev": "pnpm --dir ./packages/ui dev",
+    "build": "pnpm --dir ./packages/ui build",
+    "docs:dev": "pnpm --dir ./packages/docs dev",
+    "docs:build": "pnpm --dir ./packages/docs build",
+    "docs:serve": "pnpm --dir ./packages/docs serve",
+    "publish-all": "pnpm -r publish --access public"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.7.3",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@eslint-react/eslint-plugin": "^1.16.1",
+    "@iconify-json/ic": "^1.2.0",
+    "@types/node": "^22.7.4",
+    "@unocss/eslint-plugin": "^0.62.4",
+    "@vitest/coverage-v8": "2.1.2",
+    "cz-customizable": "^7.2.1",
+    "eslint": "^9.11.1",
+    "eslint-plugin-format": "^0.1.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "husky": "^9.1.6",
+    "terser": "^5.34.1",
+    "tsx": "^4.19.1",
+    "unocss": "catalog:"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": ".cz-config.cjs"
+    }
+  }
+}
